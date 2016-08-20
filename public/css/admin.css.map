@@ -1,0 +1,1 @@
+{"version":3,"sources":["custom.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"admin.css","sourcesContent":[".img-thumbnail, body {\n    background-color: rgb(217, 217, 217);\n}\n\n.navbar-static-top {\n    border-color: #d3e0e9;\n    background-color: #be6127;\n}"],"sourceRoot":"/source/"}
