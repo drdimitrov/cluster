@@ -30,8 +30,6 @@
                         <button type="submit" class="btn btn-default btn-sm">Upload</button>
                         {{ csrf_field() }}
                     </form>
-                    
-
                 </div>
             </div>
         </div>
