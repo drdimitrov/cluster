@@ -23,15 +23,12 @@
 				<div class="3u 12u(mobile)">
 					<section class="box style1 newsstyle">
 						<h3>Новини</h3>
-						<article>
-							<h4>Първа новина</h4>
-							<p>Съдържание на първата новина...</p>
-						</article>
-
-						<article>
-							<h4>Втора новина</h4>
-							<p>Съдържание на втората новина...</p>
-						</article>
+						@foreach($latest as $l)
+							<article>
+								<h4><a href="{{ url('/news', $l->id) }}">{{ str_limit($l->title_bg, 30, '...') }}</a></h4>
+								<p>{{ str_limit($l->content_bg, 60, '...') }}</p>
+							</article>
+						@endforeach
 					</section>
 				</div>				
 			</div>
