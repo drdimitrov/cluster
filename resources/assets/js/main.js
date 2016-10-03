@@ -59,6 +59,25 @@
 
 			});
 
+		//Dropotron
+			$('.drdown').click(function(e){
+				e.preventDefault();
+			});
+
+			$('#nav > ul').dropotron();
+
+		// Slide-out menu
+		    $('.nav-side .nav-toggle').on('click', function(e){
+		    	e.preventDefault();
+		    	$(this).parent().toggleClass('nav-open');
+
+		    });
+
+		    $('div.nav-side ul a').on('click', function(){
+		    	console.log(this)
+		    	$('.nav-side .nav-toggle').parent().toggleClass('nav-open');
+		    });
+			
 	});
 
 })(jQuery);

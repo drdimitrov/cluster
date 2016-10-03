@@ -35,6 +35,12 @@ elixir(mix => {
     	'skel.min.js',
     	'skel-viewport.min.js',
     	'util.js',
+        'jquery.dropotron.min.js',
     	'main.js'
 	]);
+
+    mix.scripts([
+        'jquery.min.js',
+        'admin.js'
+    ], 'public/js/admin.js');
 });

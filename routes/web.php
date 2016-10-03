@@ -1,18 +1,21 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-*/
-
+App::setLocale('bg');
 
 Auth::routes();
 
 Route::get('/', 'MainController@index');
+Route::get('/pictures', 'MainController@images');
+Route::get('/videos', 'MainController@videos');
+Route::get('/news/{item?}', 'MainController@news');
+Route::post('/contact', 'MainController@contact');
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/images', 'AdminController@images');
+Route::post('/admin/images/upload', 'AdminController@uploadimage');
+
+Route::get('/admin/videos', 'AdminController@videos');
+Route::post('/admin/videos', 'AdminController@uploadvideo');

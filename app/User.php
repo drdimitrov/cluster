@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $admins = [
+        'rossitsadd@gmail.com', 'info@nortiena.com',
+    ];
+
+    public function isAdmin(){
+        return in_array($this->email, $this->admins);
+    }
 }

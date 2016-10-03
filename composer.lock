@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "17305a6dd494a69fabd54bf6e8fffe9d",
-    "content-hash": "8590ceeb93631fa1815928de23258a58",
+    "hash": "5bce88785b8f0bbc6ffd325bc8928e0d",
+    "content-hash": "2559780db7a9b95833c772a3dc44278b",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1805,6 +1805,53 @@
                 "dump"
             ],
             "time": "2016-07-26 08:04:17"
+        },
+        {
+            "name": "uploadcare/uploadcare-php",
+            "version": "v1.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/uploadcare/uploadcare-php.git",
+                "reference": "cdbba2adfc6bafd95e6cd99ad20a6fe028cbe47a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/uploadcare/uploadcare-php/zipball/cdbba2adfc6bafd95e6cd99ad20a6fe028cbe47a",
+                "reference": "cdbba2adfc6bafd95e6cd99ad20a6fe028cbe47a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Uploadcare": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Uploadcare, LLC",
+                    "email": "hello@uploadcare.com"
+                }
+            ],
+            "description": "Uploadcare API binding for PHP",
+            "homepage": "https://uploadcare.com",
+            "keywords": [
+                "cdn",
+                "cloud",
+                "files",
+                "image management",
+                "upload",
+                "uploadcare"
+            ],
+            "time": "2016-05-25 17:22:20"
         },
         {
             "name": "vlucas/phpdotenv",

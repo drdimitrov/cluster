@@ -6,4 +6,9 @@
     border-color: #d3e0e9;
     background-color: #be6127;
 }
+
+/*Uloadcare*/
+form.upload-form .btn, form.upload-form .description{
+	display: none;
+}
 /*# sourceMappingURL=admin.css.map */

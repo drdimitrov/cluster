@@ -1697,7 +1697,7 @@ h1.logoh{
 			display: inline-block;
 		}
 
-		#nav a {
+		#nav a, span.drdown {
 			position: relative;
 			display: block;
 			color: #fff;
@@ -1706,9 +1706,9 @@ h1.logoh{
 			/*border: 1px solid #000;*/
 		}
 
-			#nav a:hover {
+			/*#nav a:hover, span.drdown:hover {
 				color: #fff !important;
-			}
+			}*/
 
 			#nav a.active:before {
 				content: '';
@@ -1870,7 +1870,7 @@ h1.logoh{
 
 		/* Nav */
 
-			#nav a {
+			#nav a, span.drdown {
 				-moz-transition: background-color .2s ease-in-out;
 				-webkit-transition: background-color .2s ease-in-out;
 				-ms-transition: background-color .2s ease-in-out;
@@ -1882,7 +1882,7 @@ h1.logoh{
 				color: rgb(255, 204, 102);
 			}
 
-				#nav a:hover {
+				#nav a:hover, span.drdown:hover {
 					background: rgba(255, 204, 102, 0.9);
 					color: #b85d26 !important;
 				}
@@ -2260,4 +2260,210 @@ article#contact header, article#contact header h2{
 	position: absolute;
 	right: 5%;
 }
+
+.box.img_box{
+	background: rgb(217, 217, 217);ъв
+	min-height: 396px;
+}
+
+.fancybox-overlay {
+    z-index: 10000 !important;
+}
+
+
+/*Dropotron*/
+
+#nav ul { 
+	list-style: none;
+	margin: 0; 
+	padding: 0;
+}
+
+#nav ul li { 
+	display: inline-block; 
+	margin: 0 0.1em 0 0.1em; 
+	padding: 0.35em 0.15em 0.35em 0.15em; 
+	border-radius: 0.5em;
+}
+
+/*#nav ul li.active { 
+	background: #999; 
+}*/
+
+#nav ul li.active a{ 
+	color: #b85d26;
+	text-decoration: none; 
+}
+
+.dropotron { 
+	background: rgb(255, 204, 102); 
+	border-radius: 0 0 0.5em 0.5em; 
+	list-style: none; 
+	margin: -1px; 
+	min-width: 10em; 
+	padding: 0.75em 1em 0.75em 1em;
+	border: 1px solid #be6127; 
+}
+
+.dropotron.level-0.right{
+	margin: 1px;
+	margin-top: -1px;
+}
+
+.dropotron > li { 
+	border-top: solid 1px rgb(190, 97, 39); 
+	margin: 0; 
+	padding: 0; 
+}
+
+.dropotron > li:first-child { 
+	border-top: 0; 
+}
+
+.dropotron > li > a { 
+	color: rgb(190, 97, 39); 
+	display: block; 
+	padding: 0.5em 0 0.5em 0; 
+	text-decoration: none; 
+}
+
+
+.dropotron > li.active > a, .dropotron > li:hover > a { 
+	color: #fff; 
+}
+
+/*.dropotron.level-0 { 
+	margin-top: 1.25em; 
+}*/
+
+.dropotron.level-0:before { 
+	content: ''; 
+	position: absolute; 
+	border-bottom: solid 0.5em #444; 
+	border-left: solid 0.5em transparent; 
+	border-right: solid 0.5em transparent; 
+	top: -0.5em; 
+}
+
+#nav ul li.opener.active{
+	background: rgb(255, 204, 102);
+	border-radius: 0.5em 0.5em 0 0;
+
+}
+
+.dropotron.level-0 a:hover{
+	color: #fff !important;
+}
+
+/*Pagination*/
+
+ul.pagination{
+	text-align: center;
+	margin-top: 50px;
+}
+
+ul.pagination li{
+	display: inline;
+	margin-right: 15px;
+}
+
+/*Slide-out menu*/
+.nav-side{
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 500px;
+	width: 100%;
+	max-width: 250px;
+	box-sizing: border-box;
+	padding: 20px;
+	color: #fff;
+	background-color: rgb(139, 132, 41);
+	z-index: 1;
+	margin-left: -250px;
+	transition: margin 200ms ease-in-out;
+	display: none;
+}
+
+.nav-side.nav-open{
+	margin-left: 0;
+	box-shadow: 1px 0 3px rgba(0, 0, 0, .1);
+}
+
+.nav-side ul{
+	margin-top: 30px;
+	line-height: 40px;	
+}
+
+.nav-side ul li a{
+	color: rgb(255, 204, 102);
+	text-decoration: none;
+	font-size: 1.4em;
+}
+
+.nav-side ul li a:hover{
+	color: #fff !important;
+}
+
+.nav-toggle{
+	position: absolute;
+	right: -35px;
+	top: 0;
+	width: 35px;
+	height: 35px;
+	line-height: 40px;
+	text-align: center;
+	background-color: rgb(139, 132, 41);
+	border-bottom-right-radius: 5px;
+	box-shadow: 1px 0 3px rgba(0, 0, 0, .1);
+}
+
+.nav-toggle i{
+	color: rgba(255, 204, 102, 0.75);
+}
+
+@media screen and (max-width: 1024px) {
+    nav#nav{
+    	display: none;
+    }
+
+    div.nav-side{
+    	display: initial;
+    }
+}
+
+/*News*/
+section.newsstyle{
+	padding: 1em !important;
+}
+
+section.newsstyle h3{
+	text-align: center;
+	border-bottom: 1px solid #000;
+}
+
+section.newsstyle article{
+	margin-bottom: 1em;
+}
+
+section.newsstyle article h4{
+	font-size: 1.2em;
+	margin-bottom: 0;
+}
+
+.current_item, .current_item h4 a{
+	color: rgb(190, 97, 39);;
+}
+
+.newsstyle h4 a:hover{
+	color: rgb(255, 204, 102) !important;
+}
+
+/*Fonts*/
+@font-face { 
+    font-family: 'GloberLight'; 
+    src: url('../fonts/GloberLight.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+} 
 /*# sourceMappingURL=all.css.map */

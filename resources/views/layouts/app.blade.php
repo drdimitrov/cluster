@@ -80,7 +80,9 @@
 
     @yield('content')
 
+    @yield('scripts')
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <!-- <script src="{{ asset('js/admin.js') }}"></script> -->
 </body>
 </html>
