@@ -24,10 +24,12 @@
 					<section class="box style1 newsstyle">
 						<h3>Новини</h3>
 						@foreach($latest as $l)
+						<a id="news_a" href="{{ url('/news', $l->id) }}">
 							<article>
-								<h4><a href="{{ url('/news', $l->id) }}">{{ str_limit($l->title_bg, 30, '...') }}</a></h4>
+								<h4>{{ str_limit($l->title_bg, 35, '...') }}</h4>
 								<p>{{ str_limit($l->content_bg, 60, '...') }}</p>
 							</article>
+						</a>
 						@endforeach
 					</section>
 				</div>				

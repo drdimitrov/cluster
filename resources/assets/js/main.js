@@ -52,10 +52,17 @@
 
 				var x = parseInt($('.wrapper').first().css('padding-top')) - 15;
 
-				$('#nav a, .scrolly').scrolly({
+				$('#nav a').scrolly({
 					speed: 1000,
 					offset: x
 				});
+
+				//??? Doesn't work here but works in view
+				// $('a.scrolly').scrolly({
+				// 	bgParallax: true,
+				// 	speed: 1000,
+				// 	offset: x
+				// });
 
 			});
 
@@ -74,7 +81,6 @@
 		    });
 
 		    $('div.nav-side ul a').on('click', function(){
-		    	console.log(this)
 		    	$('.nav-side .nav-toggle').parent().toggleClass('nav-open');
 		    });
 			

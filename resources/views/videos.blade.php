@@ -1,7 +1,6 @@
 @extends('layouts.pages')
 
 @section('content')
-<!-- Portfolio -->
 <div class="wrapper style3">
 	<article id="portfolio">
 		<header>

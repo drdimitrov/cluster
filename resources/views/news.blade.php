@@ -35,7 +35,7 @@
 							<article>							
 								<h4>
 									<a href="{{ url('/news', $item->id)}}">
-									{{ str_limit($item->title_bg, 30, '...') }}
+									{{ str_limit($item->title_bg, 35, '...') }}
 									</a>
 								</h4>
 								

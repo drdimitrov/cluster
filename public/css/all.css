@@ -6,10 +6,22 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
 @import url("font-awesome.min.css");
 
+
+
+/*Fonts*/
 @font-face{
 	font-family:'SonsieOne';
 	src:url('../fonts/SonsieOne-Regular.otf');
 }
+
+@font-face { 
+    font-family: 'Wolgast'; 
+    src: url('../fonts/Wolgast Two Normal Cyr.ttf?v=2'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+
 
 h1.logoh{
 	font-family:'SonsieOne';
@@ -1860,7 +1872,7 @@ h1.logoh{
 		/* Wrappers */
 
 			.wrapper {
-				padding: 8em 0 8em 0;
+				padding: 5em 0 8em 0;
 				/*text-align: center;*/
 			}
 
@@ -2447,23 +2459,36 @@ section.newsstyle article{
 }
 
 section.newsstyle article h4{
-	font-size: 1.2em;
-	margin-bottom: 0;
+	font-size: 1em;
+    margin-bottom: 0;
+    line-height: 1.2em;
+}
+
+section.newsstyle article p{
+	font-size: .82em;
+    line-height: 1.2em;
+    margin-top: 5px;
 }
 
 .current_item, .current_item h4 a{
-	color: rgb(190, 97, 39);;
+	color: rgb(190, 97, 39);
 }
 
-.newsstyle h4 a:hover{
-	color: rgb(255, 204, 102) !important;
+#news_a{
+	text-decoration: none;
 }
 
-/*Fonts*/
-@font-face { 
-    font-family: 'GloberLight'; 
-    src: url('../fonts/GloberLight.woff') format('woff'); 
-    font-weight: normal; 
-    font-style: normal; 
-} 
+a#news_a h4:hover, a#news_a p:hover{
+	color: #992600 !important;
+}
+
+.newsstyle a p{
+	color: #000;
+}
+
+.wrapper header h2{
+	font-family: 'Wolgast';
+	font-size: 2.2em;
+}
+
 /*# sourceMappingURL=all.css.map */

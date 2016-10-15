@@ -92,7 +92,7 @@
 							<br> 
 							<span class="quotauth">Платон</span>
 						</p>
-						<a href="#about" class="button big scrolly">Научете повече за нас</a>
+						<a href="#about" id="st_a" class="button big scrolly">Научете повече за нас</a>
 					</div>
 				</div>
 			</article>
@@ -129,6 +129,14 @@
 
 			$(function(){
 			    $('.scroll-top-wrapper').on('click', scrollToTop);
+
+			    var x = parseInt($('.wrapper').first().css('padding-top')) - 15;
+			    $('a.button.big.scrolly').scrolly({
+					bgParallax: true,
+					speed: 1000,
+					offset: x
+				});
+
 			});
 			 
 			function scrollToTop() {
