@@ -139,15 +139,78 @@ class AdminController extends Controller
         $video = Video::find($r->id);
 
         if($video->delete()){
-            return redirect('/admin/videos')->with('msg_success', 'Video has been deleted.');;
+            return redirect('/admin/videos')->with('msg_success', 'Video has been deleted.');
         }
 
         return redirect('/admin/videos')->with('msg_danger', $this->errorMessage);
     }
 
     public function news(){
-        $news = News::paginate(10);
+        $news = News::orderBy('id', 'DESC')->paginate(10);
         $images = Image::orderBy('id', 'DESC')->take(5)->get();
         return view('admin.news', compact('news', 'images'));
+    }
+
+    public function uploadnews(Request $r){
+
+        $this->validate($r, [
+            'title_bg' => 'required',
+            'content_bg' => 'required',
+        ]);
+
+        $item = News::create([
+            'title_bg' => $r->title_bg,
+            'title_en' => $r->title_en,
+            'content_bg' => $r->content_bg,
+            'content_en' => $r->content_en,
+            'image_id' => ($r->picture != 0) ? $r->picture : null,
+        ]);
+
+        if($item->save()){
+            return redirect('/admin/news')->with('msg_success', 'News item has been saved.');
+        }
+    }
+
+    public function editNews(News $item){
+        $images = Image::orderBy('id', 'DESC')->take(5)->get();
+        return view('admin.editNews', compact('item', 'images'));
+    }
+
+    public function updateNews(Request $r){
+
+        $this->validate($r, [
+            'title_bg' => 'required',
+            'content_bg' => 'required',
+        ]);
+
+        $item = News::find($r->id);
+
+        $item->title_bg = $r->title_bg;
+        $item->title_en = $r->title_en;
+        $item->content_bg = $r->content_bg;
+        $item->content_en = $r->content_en;
+        $item->image_id = ($r->picture != 0) ? $r->picture : null;
+
+        if($item->save()){
+            return redirect('/admin/news')->with('msg_success', 'News item has been updated.');
+        }
+
+        return redirect('/admin/news')->with('msg_danger', $this->errorMessage);
+    }
+
+    public function delNews(News $item){
+        $message = 'news item';
+        $action = 'AdminController@destroyNews';
+        return view('admin.warning', compact('item', 'message', 'action'));
+    }
+
+    public function destroyNews(Request $r){
+        $item = News::find($r->id);
+
+        if($item->delete()){
+            return redirect('/admin/news')->with('msg_success', 'News item has been deleted.');
+        }
+
+        return redirect('/admin/news')->with('msg_danger', $this->errorMessage);
     }
 }

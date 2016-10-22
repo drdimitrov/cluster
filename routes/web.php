@@ -29,3 +29,8 @@ Route::get('/admin/videos/delete/{item}', 'AdminController@delVideo');
 Route::post('/admin/videos/delete', 'AdminController@destroyVideo');
 
 Route::get('/admin/news', 'AdminController@news');
+Route::post('/admin/news/upload', 'AdminController@uploadnews');
+Route::get('/admin/news/edit/{item}', 'AdminController@editNews');
+Route::post('/admin/news/edit', 'AdminController@updateNews');
+Route::get('/admin/news/delete/{item}', 'AdminController@delNews');
+Route::post('/admin/news/delete', 'AdminController@destroyNews');

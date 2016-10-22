@@ -5,7 +5,8 @@
 		<title>Cluster</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="{{ asset('css/all.css')}}" />		
+		<link rel="stylesheet" href="{{ asset('css/all.css')}}" />
+		<link rel="stylesheet" href="{{ asset('fancybox/jquery.fancybox.css')}}" />	
 	</head>
 	<body>
 		@include('partials.slide-out-nav')
@@ -17,7 +18,7 @@
 				<li><a href="news">Новини</a></li>
 				<li><a href="#about">За нас</a></li>
 				<li><a href="#teachers">Преподаватели</a></li>
-				<li><a href="#method">Метод</a></li>
+				<!-- <li><a href="#method">Метод</a></li> -->
 				<li>
 					<a href="#portfolio">
 						Галерия
@@ -104,13 +105,7 @@
 
 		<!-- Scripts -->
 		<script src="{{ asset('js/all.js')}}"></script>
-		<!-- <script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/skel-viewport.min.js"></script>
-		<script src="assets/js/util.js"></script> -->
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<!-- <script src="assets/js/main.js"></script> -->
+		<script src="{{ asset('fancybox/jquery.fancybox.js')}}"></script>
 		<script>				
 			$(function(){
  
@@ -123,7 +118,13 @@
 			            $('.scroll-top-wrapper').removeClass('show');
 				   $('#codeprefheader').css('position','relative');
 			        }
-			    });			    
+			    });
+
+			    $('.fancyimg').fancybox({
+					openEffect	: 'none',
+					closeEffect	: 'none',
+					type : 'image'
+				});			    
 			    
 			});
 

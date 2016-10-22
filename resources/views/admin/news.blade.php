@@ -17,10 +17,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <p>Add News Item:</p>
-                            <form class="upload-video" method="post" action="/admin/videos/upload" style="margin-bottom: 10px;">
+                            <form class="upload-video" method="post" action="/admin/news/upload" style="margin-bottom: 10px;">
                             	<div class="form-group">
                                     <label for="picture">Select picture:</label>
-                                    <select class="form-control" id="picture">
+                                    <select class="form-control" id="picture" name="picture">
+                                        <option value="0">None</option>
                                     	@foreach($images as $image)
                                     	<option value="{{$image->id}}">{{$image->description}}</option>
                                     	@endforeach
@@ -28,13 +29,23 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="title">Title:</label>
-                                    <input class="form-control" type="text" name="title">
+                                    <label for="title_bg">Title BG:</label>
+                                    <input class="form-control" type="text" name="title_bg">
                                 </div>
 
                                 <div class="form-group">
-                                  <label for="content">Content:</label>
-                                  <textarea class="form-control" name="content" rows="5" id="content"></textarea>
+                                    <label for="title_en">Title EN:</label>
+                                    <input class="form-control" type="text" name="title_en">
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="content_bg">Content BG:</label>
+                                  <textarea class="form-control" name="content_bg" rows="5" id="content"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="content_en">Content EN:</label>
+                                  <textarea class="form-control" name="content_en" rows="5" id="content"></textarea>
                                 </div>
                                 
                                 <button type="submit" class="btn btn-default">Upload</button>

@@ -17,64 +17,68 @@
 						{{ $news->first()->title_bg }}
 						@endif
 					</h4>
-						<p>
-						@if(isset($current))
-						{{ $current->content_bg}}
-						@else
-						{{ $news->first()->content_bg}}
-						@endif
-						</p>
-
+					<div class="row">
+						<div class="12u 12u(mobile) newsItemWraper">
+							@if(isset($current))
+								@if(isset($current->image))
+								<a href="{{ $current->image->url }}" class="fancyimg" rel="gallery1" title="{{ $current->image->description }}">							
+								<img  src="{{ app('uploadcare')->getFile($current->image->url)->op('quality/lightest')->op('progressive/yes')->resize(300)->getUrl() }}" >
+								</a>
+								@endif
+							@else
+								@if(isset($news->first()->image))
+								<a href="{{ $news->first()->image->url }}" class="fancyimg" rel="gallery1" title="{{ $news->first()->image->description }}">
+								<img src="{{ app('uploadcare')->getFile($news->first()->image->url)->op('quality/lightest')->op('progressive/yes')->resize(300)->getUrl() }}" >
+								</a>
+								@endif
+							@endif
+							<p>
+								{{ isset($current) ? $current->content_bg : $news->first()->content_bg }}
+							</p>
+						</div>	
+					</div>
 					</section>
 				</div>
 
 				<div class="3u 12u(mobile)">
 					<section class="box style1 newsstyle">
 						@if(!isset($current))
-							@foreach($news as $item)						
-							<article>							
-								<h4>
-									<a href="{{ url('/news', $item->id)}}">
-									{{ str_limit($item->title_bg, 35, '...') }}
-									</a>
-								</h4>
-								
-								<p>{{ str_limit($item->content_bg, 60, '...') }}</p>
-								
-							</article>
+							@foreach($news as $item)
+							<a class="news_a" href="{{ url('/news', $item->id)}}">						
+								<article>							
+									<h4>{{ str_limit($item->title_bg, 35, '...') }}</h4>
+									<p>{{ str_limit($item->content_bg, 60, '...') }}</p>
+								</article>
+							</a>
 							@endforeach
 						@else
 							@if(isset($prev))
-							<h4>
-								<a href="{{ url('/news', $prev->id)}}">
-								{{ str_limit($prev->title_bg, 30, '...') }}
-								</a>
-							</h4>
-								
-							<p>{{ str_limit($prev->content_bg, 60, '...') }}</p>
+							<a class="news_a" href="{{ url('/news', $prev->id)}}">
+								<article>
+									<h4>{{ str_limit($prev->title_bg, 30, '...') }}</h4>
+									<p>{{ str_limit($prev->content_bg, 60, '...') }}</p>
+								</article>
+							</a>
 							@endif
 							
 							<div class="current_item">
-								<h4>
-									<a href="{{ url('/news', $current->id)}}">
-									{{ str_limit($current->title_bg, 30, '...') }}
-									</a>
-								</h4>
-									
-								<p>{{ str_limit($current->content_bg, 60, '...') }}</p>
-							</div>
-							@if(isset($next))
-							<h4>
-								<a href="{{ url('/news', $next->id)}}">
-								{{ str_limit($next->title_bg, 30, '...') }}
+								<a class="news_a" href="{{ url('/news', $current->id)}}">
+									<article>
+										<h4>{{ str_limit($current->title_bg, 30, '...') }}</h4>
+										<p>{{ str_limit($current->content_bg, 60, '...') }}</p>
+									</article>
 								</a>
-							</h4>
-								
-							<p>{{ str_limit($next->content_bg, 60, '...') }}</p>
-						@endif
-						@endif
+							</div>
 
-						
+							@if(isset($next))
+							<a class="news_a" href="{{ url('/news', $next->id)}}">
+								<article>
+									<h4>{{ str_limit($next->title_bg, 30, '...') }}</h4>
+									<p>{{ str_limit($next->content_bg, 60, '...') }}</p>
+								</article>
+								</a>
+							@endif
+						@endif
 					</section>
 				</div>				
 			</div>

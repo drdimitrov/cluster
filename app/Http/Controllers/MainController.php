@@ -54,7 +54,7 @@ class MainController extends Controller
     public function news($item = null){
 
         if(!$item){
-            $news = News::orderBy('id' , 'DESC')->limit(5)->get();
+            $news = News::with('image')->orderBy('id' , 'DESC')->limit(5)->get();
             return view('news', compact('news'));
         }
 

@@ -28,8 +28,10 @@
 			
 			</div>			
 		</div>
-
+	<div class="paginatorWrapper">
 		{{ $images->links() }}
+	</div>
 	</article>
 </div>
+
 @endsection

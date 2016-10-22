@@ -103,24 +103,17 @@
 		<!-- Scoll top -->
 		<div class="scroll-top-wrapper">
 		    <span class="scroll-top-inner">
-		        <img src="images/lisko.png" class="glyphicon glyphicon-arrow-up" height="95"></img>
+		        <img src="/images/lisko.png" class="glyphicon glyphicon-arrow-up" height="95"></img>
 		    </span>
 		</div>
-		
+
 		@yield('content')
 
 		@include('partials.contact')
 
 		<!-- Scripts -->
 		<script src="{{ asset('js/all.js')}}"></script>
-		<script src="{{ asset('fancybox/jquery.fancybox.js')}}"></script>
-		<!-- <script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/skel-viewport.min.js"></script>
-		<script src="assets/js/util.js"></script> -->
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<!-- <script src="assets/js/main.js"></script> -->
+		<script src="{{ asset('fancybox/jquery.fancybox.js')}}"></script>		
 		<script>				
 			$(function(){
  
@@ -153,6 +146,7 @@
 			        padding     : 0,
 			        margin      : [20, 60, 20, 60] // Increase left/right margin
 			    });
+
 
 			});	
 			 

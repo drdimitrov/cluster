@@ -24,7 +24,7 @@
 					<section class="box style1 newsstyle">
 						<h3>Новини</h3>
 						@foreach($latest as $l)
-						<a id="news_a" href="{{ url('/news', $l->id) }}">
+						<a class="news_a" href="{{ url('/news', $l->id) }}">
 							<article>
 								<h4>{{ str_limit($l->title_bg, 35, '...') }}</h4>
 								<p>{{ str_limit($l->content_bg, 60, '...') }}</p>
@@ -80,7 +80,7 @@
 					@endif
 					<div class="4u 12u(mobile)">
 						<article class="box style2 img_box">
-							<a  class="image featured fancybox" rel="gallery1" title="{{ $image->description }}">
+							<a href="{{ $image->url }}" class="image featured fancybox fancyimg" rel="gallery1" title="{{ $image->description }}">
 								<img src="{{ app('uploadcare')->getFile($image->url)->op('quality/lightest')->op('progressive/yes')->resize(400, 300, true)->getUrl() }}" alt="" />
 							</a>
 							<p>{{ str_limit($image->description, 30, '...') }}</p>

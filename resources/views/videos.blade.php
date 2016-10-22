@@ -27,8 +27,9 @@
 			
 			</div>			
 		</div>
-
-		{{ $videos->links() }}
+		<div class="paginatorWrapper">
+			{{ $videos->links() }}
+		</div>
 	</article>
 </div>
 @endsection
