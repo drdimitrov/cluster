@@ -18,7 +18,7 @@
 						@endif
 					</h4>
 					<div class="row">
-						<div class="12u 12u(mobile) newsItemWraper">
+						<div class="5u 12u(mobile) newsItemWraper">
 							@if(isset($current))
 								@if(isset($current->image))
 								<a href="{{ $current->image->url }}" class="fancyimg" rel="gallery1" title="{{ $current->image->description }}">							
@@ -32,6 +32,8 @@
 								</a>
 								@endif
 							@endif
+						</div>
+						<div class="7u 12u(mobile) newsItemWraper">
 							<p>
 								{{ isset($current) ? $current->content_bg : $news->first()->content_bg }}
 							</p>
