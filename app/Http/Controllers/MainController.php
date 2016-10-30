@@ -40,15 +40,23 @@ class MainController extends Controller
 
     public function contact(Request $r, ContactMailSent $cm){
         
-        Mail::to('info@bla.com')
-            ->cc('other@email.com')
+        Mail::to('dimitrova@cluster-guitar.info')
             ->send($cm);
-
-        return redirect('/')->with(
-            'msg-mail',
-            'Your email has been sent. We will get back to you as soon as possible. Thanks!'
-        );    
-
+			
+		return redirect('/');
+		/*
+		if($mail){
+			return redirect('/')->with(
+				'msg-mail',
+				'Your email has been sent. We will get back to you as soon as possible. Thanks!'
+			);
+		}
+        
+		return redirect('/')->with(
+			'msg-mail',
+			'Sending failed. Please, try again later.'
+		);
+		*/
     }
 
     public function news($item = null){
