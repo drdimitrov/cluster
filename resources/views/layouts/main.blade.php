@@ -15,7 +15,8 @@
 		<nav id="nav">
 			<ul class="container">
 				<li><a href="#top">Начало</a></li>
-				<li><a href="news">Новини</a></li>
+				<li><a href="/method">Метод</a></li>
+				<li><a href="/news">Новини</a></li>
 				<li><a href="#about">За нас</a></li>
 				<li><a href="#teachers">Преподаватели</a></li>
 				<!-- <li><a href="#method">Метод</a></li> -->

@@ -114,6 +114,7 @@
 		<!-- Scripts -->
 		<script src="{{ asset('js/all.js')}}"></script>
 		<script src="{{ asset('fancybox/jquery.fancybox.js')}}"></script>		
+		<script src="{{ asset('slider/jquery.bxslider.min.js')}}"></script>		
 		<script>				
 			$(function(){
  
@@ -147,6 +148,15 @@
 			        margin      : [20, 60, 20, 60] // Increase left/right margin
 			    });
 
+			    $('ul.bxslider').bxSlider({
+			    	mode: 'fade',
+			    	controls : false,
+			    	infiniteLoop: true,
+					pager: false,
+					auto:true,
+					autoDelay:0,
+					pause: 1000
+			    });
 
 			});	
 			 
