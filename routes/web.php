@@ -40,3 +40,6 @@ Route::get('/admin/news/edit/{item}', 'AdminController@editNews');
 Route::post('/admin/news/edit', 'AdminController@updateNews');
 Route::get('/admin/news/delete/{item}', 'AdminController@delNews');
 Route::post('/admin/news/delete', 'AdminController@destroyNews');
+
+Route::get('/admin/transitions', 'AdminController@transitions');
+Route::post('/admin/transitions', 'AdminController@saveTransition');

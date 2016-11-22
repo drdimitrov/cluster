@@ -213,4 +213,12 @@ class AdminController extends Controller
 
         return redirect('/admin/news')->with('msg_danger', $this->errorMessage);
     }
+
+    public function transitions(){
+        return view('admin.transitions');
+    }
+
+    public function saveTransition(Request $r){
+        dd($r->all());
+    }
 }
