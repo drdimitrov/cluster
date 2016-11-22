@@ -17,6 +17,44 @@
     -o-transform: translatez(0);
     transform: translatez(0);
 }
+
+.style1.method_menu{
+	font-size: 1.2em;
+	padding: 0;
+}
+
+.style1.method_menu.ul{
+	list-style-type: none;
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.method_menu ul li{
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.method_menu a{
+    padding-left: 1em;
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	color: #000;
+}
+
+.method_menu li:first-child a{
+	border-radius: 10px 10px 0 0;
+}
+
+.method_menu li:last-child a{
+	border-radius: 0 0 10px 10px;
+}
+
+.method_menu a:hover{
+	color: #ccc !important;
+	background: #000;
+}
 </style>
 <div class="wrapper style2">
 	<article id="about">
@@ -37,7 +75,18 @@
 						<li><img src="{{ asset('metod/slider/p.7.png')}}" /></li>
 					</ul>	
 				</div>
-				<div class="12u 12u(mobile)">
+				<div class="3u 12u(mobile)">
+					<section class="box style1 method_menu">
+						<ul>
+							<li><a href="">Увод</a></li>
+							<li><a href="">Преход I-II</a></li>
+							<li><a href="">Преход II-III</a></li>
+							<li><a href="">Преход III-IV</a></li>
+							<li><a href="">Генератор диаграми</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="9u 12u(mobile)">
 					<section class="box style1">
 					<!-- <h4>
 						Method
