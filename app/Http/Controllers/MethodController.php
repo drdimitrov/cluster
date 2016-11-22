@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Transition;
 
 class MethodController extends Controller
 {
@@ -13,7 +14,9 @@ class MethodController extends Controller
     }
 
     public function first(){
-    	return view('method.transition_first');
+        $transitions = Transition::where('transition', 1)->get();
+        
+    	return view('method.transition_first', compact('transitions'));
     }
 
     public function second(){

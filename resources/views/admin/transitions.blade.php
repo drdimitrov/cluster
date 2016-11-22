@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <p>Add Method Picture:</p>
-                            <form  method="post" action="/admin/transitions" style="margin-bottom: 10px;">
+                            <form  method="post" action="/admin/transitions" enctype="multipart/form-data" style="margin-bottom: 10px;">
                             	<div class="form-group">
                                     <label for="picture">Select picture:</label>
                                     <input type="file" name="picture" >

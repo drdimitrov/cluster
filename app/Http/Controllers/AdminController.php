@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Image;
 use App\Video;
 use App\News;
+use App\Transition;
 use Uploadcare;
 
 class AdminController extends Controller
@@ -219,6 +220,17 @@ class AdminController extends Controller
     }
 
     public function saveTransition(Request $r){
-        dd($r->all());
+        $transition = Transition::create([
+            'name' => str_replace(' ', '_', $r->name),
+            'transition' => $r->transition,
+        ]);
+
+        if($transition->save()){
+            $r->file('picture')->storeAs('public/transition_'.$r->transition, $r->name.'.png');
+            return back()->with('msg_success', 'File has been uploaded successfully.');
+        }
+
+        return back()->with('msg_danger', 'Whoops, something went wrong.');
+        
     }
 }
