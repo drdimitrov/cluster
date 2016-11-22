@@ -6,6 +6,11 @@ Auth::routes();
 
 Route::get('/', 'MainController@index');
 Route::get('/method', 'MethodController@index');
+Route::get('/method/transition/first', 'MethodController@first');
+Route::get('/method/transition/second', 'MethodController@second');
+Route::get('/method/transition/third', 'MethodController@third');
+Route::get('/method/generator', 'MethodController@generator');
+Route::get('/method', 'MethodController@index');
 Route::get('/pictures', 'MainController@images');
 Route::get('/videos', 'MainController@videos');
 Route::get('/news/{item?}', 'MainController@news');
