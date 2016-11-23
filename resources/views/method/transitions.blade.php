@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('jqueryui/jquery-ui.min.css') }}">
 @section('method_content')
 <h3>Преход I-II</h3>
-{{-- <img src="{{ asset('metod/slider/p.0.png')}}" oncontextmenu="return false;"/> --}}
+
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">Диаграми</a></li>

@@ -313,6 +313,8 @@ class ComposerStaticInit04137cc7f0cf5f889387905bea8a3859
     public static $classMap = array (
         'ChangeNewsTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_16_094454_change_news_table.php',
         'CreateImagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_01_081725_create_images_table.php',
+        'CreateMethodNotesTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_23_151830_create_method_notes_table.php',
+        'CreateMethodVideosTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_23_151846_create_method_videos_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateTransitionGroupsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_23_082117_create_transition_groups_table.php',
         'CreateTransitionTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_23_082943_create_transition_table.php',
