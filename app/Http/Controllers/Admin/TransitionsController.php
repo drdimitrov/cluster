@@ -51,4 +51,20 @@ class TransitionsController extends Controller
         return back()->with('msg_danger', 'Whoops, something went wrong.');
         
     }
+
+    public function notes(){
+
+    }
+
+    public function saveNotes(){
+    	
+    }
+
+    public function videos(){
+
+    }
+
+    public function saveVideos(){
+    	
+    }
 }

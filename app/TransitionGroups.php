@@ -11,4 +11,12 @@ class TransitionGroups extends Model
     public function transitions(){
     	return $this->hasMany(Transition::class, 'transition');
     }
+
+    public function notes(){
+    	return $this->hasMany(MethodNote::class, 'transition');
+    }
+
+    public function videos(){
+    	return $this->hasMany(MethodVideo::class, 'transition');
+    }
 }
