@@ -114,7 +114,8 @@
 		<!-- Scripts -->
 		<script src="{{ asset('js/all.js')}}"></script>
 		<script src="{{ asset('fancybox/jquery.fancybox.js')}}"></script>		
-		<script src="{{ asset('slider/jquery.bxslider.min.js')}}"></script>		
+		<script src="{{ asset('slider/jquery.bxslider.min.js')}}"></script>
+		<script src="{{ asset('jqueryui/jquery-ui.min.js') }}"></script>		
 		<script>				
 			$(function(){
  
@@ -157,6 +158,8 @@
 					autoDelay:0,
 					pause: 1000
 			    });
+
+			    $('#tabs').tabs();
 
 			});	
 			 
