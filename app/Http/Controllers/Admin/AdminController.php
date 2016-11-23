@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Image;
 use App\Video;
 use App\News;
-use App\Transition;
 use Uploadcare;
 
 class AdminController extends Controller
@@ -215,4 +215,30 @@ class AdminController extends Controller
         return redirect('/admin/news')->with('msg_danger', $this->errorMessage);
     }
 
+    public function trGroups(){
+
+    }
+
+    public function savetrGroups(){
+        
+    }
+
+    public function transitions(){
+        return view('admin.transitions');
+    }
+
+    public function saveTransition(Request $r){
+        $transition = Transition::create([
+            'name' => str_replace(' ', '_', $r->name),
+            'transition' => $r->transition,
+        ]);
+
+        if($transition->save()){
+            $r->file('picture')->storeAs('public/transition_'.$r->transition, $r->name.'.png');
+            return back()->with('msg_success', 'File has been uploaded successfully.');
+        }
+
+        return back()->with('msg_danger', 'Whoops, something went wrong.');
+        
+    }
 }

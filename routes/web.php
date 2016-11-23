@@ -6,9 +6,7 @@ Auth::routes();
 
 Route::get('/', 'MainController@index');
 Route::get('/method', 'MethodController@index');
-Route::get('/method/transition/first', 'MethodController@first');
-Route::get('/method/transition/second', 'MethodController@second');
-Route::get('/method/transition/third', 'MethodController@third');
+Route::get('/method/transition/{num}', 'MethodController@transitions');
 Route::get('/method/generator', 'MethodController@generator');
 Route::get('/method', 'MethodController@index');
 Route::get('/pictures', 'MainController@images');
@@ -18,28 +16,31 @@ Route::post('/contact', 'MainController@contact');
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'Admin\AdminController@index');
 
-Route::get('/admin/images', 'AdminController@images');
-Route::post('/admin/images/upload', 'AdminController@uploadimage');
-Route::get('/admin/images/edit/{image}', 'AdminController@editimage');
-Route::post('/admin/images/edit', 'AdminController@updateimage');
-Route::get('/admin/images/delete/{item}', 'AdminController@deleteimage');
-Route::post('/admin/images/delete', 'AdminController@destroyImg');
+Route::get('/admin/images', 'Admin\AdminController@images');
+Route::post('/admin/images/upload', 'Admin\AdminController@uploadimage');
+Route::get('/admin/images/edit/{image}', 'Admin\AdminController@editimage');
+Route::post('/admin/images/edit', 'Admin\AdminController@updateimage');
+Route::get('/admin/images/delete/{item}', 'Admin\AdminController@deleteimage');
+Route::post('/admin/images/delete', 'Admin\AdminController@destroyImg');
 
-Route::get('/admin/videos', 'AdminController@videos');
-Route::post('/admin/videos/upload', 'AdminController@uploadVideo');
-Route::get('/admin/videos/edit/{video}', 'AdminController@editVideo');
-Route::post('/admin/videos/edit', 'AdminController@updateVideo');
-Route::get('/admin/videos/delete/{item}', 'AdminController@delVideo');
-Route::post('/admin/videos/delete', 'AdminController@destroyVideo');
+Route::get('/admin/videos', 'Admin\AdminController@videos');
+Route::post('/admin/videos/upload', 'Admin\AdminController@uploadVideo');
+Route::get('/admin/videos/edit/{video}', 'Admin\AdminController@editVideo');
+Route::post('/admin/videos/edit', 'Admin\AdminController@updateVideo');
+Route::get('/admin/videos/delete/{item}', 'Admin\AdminController@delVideo');
+Route::post('/admin/videos/delete', 'Admin\AdminController@destroyVideo');
 
-Route::get('/admin/news', 'AdminController@news');
-Route::post('/admin/news/upload', 'AdminController@uploadnews');
-Route::get('/admin/news/edit/{item}', 'AdminController@editNews');
-Route::post('/admin/news/edit', 'AdminController@updateNews');
-Route::get('/admin/news/delete/{item}', 'AdminController@delNews');
-Route::post('/admin/news/delete', 'AdminController@destroyNews');
+Route::get('/admin/news', 'Admin\AdminController@news');
+Route::post('/admin/news/upload', 'Admin\AdminController@uploadnews');
+Route::get('/admin/news/edit/{item}', 'Admin\AdminController@editNews');
+Route::post('/admin/news/edit', 'Admin\AdminController@updateNews');
+Route::get('/admin/news/delete/{item}', 'Admin\AdminController@delNews');
+Route::post('/admin/news/delete', 'Admin\AdminController@destroyNews');
 
-Route::get('/admin/transitions', 'AdminController@transitions');
-Route::post('/admin/transitions', 'AdminController@saveTransition');
+Route::get('/admin/transition-groups', 'Admin\TransitionsController@trGroups');
+Route::post('/admin/transition-groups', 'Admin\TransitionsController@savetrGroups');
+
+Route::get('/admin/transitions', 'Admin\TransitionsController@transitions');
+Route::post('/admin/transitions', 'Admin\TransitionsController@saveTransition');

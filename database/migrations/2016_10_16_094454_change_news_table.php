@@ -14,7 +14,7 @@ class ChangeNewsTable extends Migration
     public function up()
     {
         Schema::table('news', function ($table) {
-            $table->integer('image')->nullable();
+            //$table->integer('image')->nullable();
             //$table->timestamps();
             // $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'))->change();
             // $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP'))->change();

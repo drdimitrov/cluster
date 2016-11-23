@@ -15,6 +15,7 @@
                 					<li><a href="{{ url('/admin/images') }}">Images</a></li>
                 					<li><a href="{{ url('/admin/videos') }}">Videos</a></li>
                                     <li><a href="{{ url('/admin/news') }}">News</a></li>
+                                    <li><a href="{{ url('/admin/transition-groups') }}">Transition Groups</a></li>
                 					<li><a href="{{ url('/admin/transitions') }}">Transitions</a></li>
                 				</ul>                				
                 			</div>

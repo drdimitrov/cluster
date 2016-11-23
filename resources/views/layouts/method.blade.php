@@ -85,8 +85,6 @@ img{
 						<ul>
 							<li><a href="{{ url('/method') }}">Увод</a></li>
 							<li><a href="{{ url('/method/transition/first') }}">Преход I-II</a></li>
-							<li><a href="{{ url('/method/transition/second') }}">Преход II-III</a></li>
-							<li><a href="{{ url('/method/transition/third') }}">Преход III-IV</a></li>
 							<li><a href="{{ url('/method/generator') }}">Генератор диаграми</a></li>
 						</ul>
 					</section>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Transition;
+use App\TransitionGroups;
 
 class MethodController extends Controller
 {
@@ -13,18 +13,10 @@ class MethodController extends Controller
     	return view('method');
     }
 
-    public function first(){
-        $transitions = Transition::where('transition', 1)->get();
-        
-    	return view('method.transition_first', compact('transitions'));
-    }
-
-    public function second(){
-    	return view('method.transition_second');
-    }
-
-    public function third(){
-    	return view('method.transition_third');
+    public function transitions($num){
+        $transitions = TransitionGroups::with('tranditions')->find($num);
+        dd($transitions);
+    	return view('method.transitions', compact('transitions'));
     }
 
     public function generator(){

@@ -29,11 +29,16 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="description">Description:</label>
+                                    <input class="form-control" type="text" name="description">
+                                </div>
+
+                                <div class="form-group">
                                     <label for="transition">Transition:</label>
                                     <select class="form-control" id="transition" name="transition">
-                                        <option value="1">I-II</option>                                    	
-                                        <option value="2">II-III</option>                                    	
-                                        <option value="3">III-IV</option>                                    	
+                                        @foreach($groups as $group)
+                                        <option value="{{ $group->id }}">{{ $group->name }}</option>
+                                        @endforeach                                    	
                                     </select>
                                 </div>
 
