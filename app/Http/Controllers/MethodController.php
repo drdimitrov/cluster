@@ -14,8 +14,7 @@ class MethodController extends Controller
     }
 
     public function transitions($num){
-        $transitions = TransitionGroups::with('tranditions')->find($num);
-        dd($transitions);
+        $transitions = TransitionGroups::with('transitions')->find($num);
     	return view('method.transitions', compact('transitions'));
     }
 

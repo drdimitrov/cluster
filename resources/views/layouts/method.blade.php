@@ -84,7 +84,9 @@ img{
 					<section class="box style1 method_menu">
 						<ul>
 							<li><a href="{{ url('/method') }}">Увод</a></li>
-							<li><a href="{{ url('/method/transition/first') }}">Преход I-II</a></li>
+							@foreach($transgroups as $tg)							
+							<li><a href="{{ url('/method/transition', $tg->id) }}">{{ $tg->name }}</a></li>
+							@endforeach
 							<li><a href="{{ url('/method/generator') }}">Генератор диаграми</a></li>
 						</ul>
 					</section>
