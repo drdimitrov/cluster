@@ -53,18 +53,22 @@ class TransitionsController extends Controller
     }
 
     public function notes(){
+    	$groups = TransitionGroups::all();
 
+        return view('admin.notes', compact('groups'));
     }
 
-    public function saveNotes(){
-    	
+    public function saveNotes(Request $r){
+    	dd($r->all());
     }
 
     public function videos(){
+    	$groups = TransitionGroups::all();
 
+        return view('admin.method-videos', compact('groups'));
     }
 
-    public function saveVideos(){
-    	
+    public function saveVideos(Request $r){
+    	dd($r->all());
     }
 }

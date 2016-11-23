@@ -44,3 +44,9 @@ Route::post('/admin/transition-groups', 'Admin\TransitionsController@savetrGroup
 
 Route::get('/admin/transitions', 'Admin\TransitionsController@transitions');
 Route::post('/admin/transitions', 'Admin\TransitionsController@saveTransition');
+
+Route::get('/admin/transition-notes', 'Admin\TransitionsController@notes');
+Route::post('/admin/transition-notes', 'Admin\TransitionsController@saveNotes');
+
+Route::get('/admin/transition-videos', 'Admin\TransitionsController@videos');
+Route::post('/admin/transition-videos', 'Admin\TransitionsController@saveVideos');

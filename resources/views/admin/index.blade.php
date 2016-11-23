@@ -16,7 +16,9 @@
                 					<li><a href="{{ url('/admin/videos') }}">Videos</a></li>
                                     <li><a href="{{ url('/admin/news') }}">News</a></li>
                                     <li><a href="{{ url('/admin/transition-groups') }}">Transition Groups</a></li>
-                					<li><a href="{{ url('/admin/transitions') }}">Transitions</a></li>
+                                    <li><a href="{{ url('/admin/transitions') }}">Transitions</a></li>
+                                    <li><a href="{{ url('/admin/transition-notes') }}">Method notes</a></li>
+                					<li><a href="{{ url('/admin/transition-videos') }}">Method videos</a></li>
                 				</ul>                				
                 			</div>
                 			<div class="col-md-10">
