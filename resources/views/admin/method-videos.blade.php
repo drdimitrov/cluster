@@ -25,6 +25,11 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="description">Description:</label>
+                                    <input class="form-control" type="text" name="description">
+                                </div>
+
+                                <div class="form-group">
                                     <label for="transition">Transition:</label>
                                     <select class="form-control" id="transition" name="transition">
                                         @foreach($groups as $group)

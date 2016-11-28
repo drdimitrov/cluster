@@ -70,24 +70,20 @@ img{
 			<div class="row">
 				<div class="12u 12u(mobile)">
 					<ul class="bxslider">
-						<li><img src="{{ asset('metod/slider/p.0.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p.1.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p.2.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p.3.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p.4.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p.5.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p.6.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p.7.png')}}" /></li>
+						<li><img src="{{ asset('metod/slider/p1.png')}}" /></li>
+						<li><img src="{{ asset('metod/slider/p2.png')}}" /></li>
+						<li><img src="{{ asset('metod/slider/p3.png')}}" /></li>
+						<li><img src="{{ asset('metod/slider/p4.png')}}" /></li>
+						<li><img src="{{ asset('metod/slider/p5.png')}}" /></li>
+						<li><img src="{{ asset('metod/slider/p6.png')}}" /></li>
 					</ul>	
 				</div>
 				<div class="3u 12u(mobile)">
 					<section class="box style1 method_menu">
 						<ul>
-							<li><a href="{{ url('/method') }}">Увод</a></li>
 							@foreach($transgroups as $tg)							
-							<li><a href="{{ url('/method/transition', $tg->id) }}">{{ $tg->name }}</a></li>
+							<li><a href="{{ url('/method/'.$part.'/transition/'.$tg->id) }}">{{ $tg->name }}</a></li>
 							@endforeach
-							<li><a href="{{ url('/method/generator') }}">Генератор диаграми</a></li>
 						</ul>
 					</section>
 				</div>

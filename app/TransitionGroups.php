@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TransitionGroups extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'part'];
 
     public function transitions(){
     	return $this->hasMany(Transition::class, 'transition');

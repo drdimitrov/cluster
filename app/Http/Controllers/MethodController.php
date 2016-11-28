@@ -13,9 +13,17 @@ class MethodController extends Controller
     	return view('method');
     }
 
-    public function transitions($num){
-        $transitions = TransitionGroups::with('transitions')->find($num);
-    	return view('method.transitions', compact('transitions'));
+    public function transitions($part, $num){
+
+        $transgroups = TransitionGroups::where('part', $part)->get();
+
+        if(!count($transgroups)){
+            return redirect('/');
+        }
+
+        $transitions = TransitionGroups::with('transitions', 'notes', 'videos')->find($num);
+
+    	return view('method.transitions', compact('transitions', 'transgroups', 'part'));
     }
 
     public function generator(){

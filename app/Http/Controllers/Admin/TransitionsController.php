@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Transition;
 use App\TransitionGroups;
+use App\MethodNote;
+use App\MethodVideo;
 
 class TransitionsController extends Controller
 {
@@ -20,7 +22,8 @@ class TransitionsController extends Controller
     	]);
 
     	$group = TransitionGroups::create([
-    		'name' => $r->name
+    		'name' => $r->name,
+            'part' => 1,
 		]);
 
 		if($group->save()){
@@ -59,7 +62,19 @@ class TransitionsController extends Controller
     }
 
     public function saveNotes(Request $r){
-    	dd($r->all());
+        
+    	$note = MethodNote::create([
+            'name' => $r->name,
+            'description' => $r->description,
+            'transition' => $r->transition,
+        ]);
+
+        if($note->save()){
+            $r->file('notes')->storeAs('public/notes_'.$r->transition, $r->name.'.png');
+            return back()->with('msg_success', 'File has been uploaded successfully.');
+        }
+
+        return back()->with('msg_danger', 'Whoops, something went wrong.');
     }
 
     public function videos(){
@@ -69,6 +84,19 @@ class TransitionsController extends Controller
     }
 
     public function saveVideos(Request $r){
-    	dd($r->all());
+        
+        $source = str_replace('/', '', parse_url($r->name)['path']); 
+    	
+        $video = MethodVideo::create([
+            'name' => $source,
+            'description' => $r->description,
+            'transition' => $r->transition,
+        ]);
+
+        if($video->save()){
+            return back()->with('msg_success', 'Video has been uploaded successfully.');
+        }
+
+        return back()->with('msg_danger', 'Whoops, something went wrong.');
     }
 }

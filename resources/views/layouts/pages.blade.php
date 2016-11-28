@@ -43,14 +43,26 @@
 				@endif
 			</ul>
 		</div>
-
+		
 		<!-- Nav -->
 		<nav id="nav">
 			<ul class="container">				
 				<li><a href="{{ url('/') }}">Начало</a></li>
+
+				@if(Request::segment(1) != 'method')
 				<li><a href="/news">Новини</a></li>
 				<li>
-					<a href="#portfolio">
+					<a href="#">
+						Метод
+					</a>
+					<ul>
+						<li><a href="{{ url('/method') }}">Увод</a></li>
+						<li><a href="{{ url('/method/1/transition/1') }}">Първа част</a></li>
+						<li><a href="{{ url('/method/generator') }}">Генератор</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
 						Галерия
 					</a>
 					<ul>
@@ -58,6 +70,11 @@
 						<li><a href="{{ url('/videos') }}">Видео</a></li>
 					</ul>
 				</li>
+				@else
+				<li><a href="{{ url('/method') }}">Увод</a></li>
+				<li><a href="{{ url('/method/1/transition/1') }}">Първа част</a></li>
+				<li><a href="{{ url('/method/generator') }}">Генератор</a></li>
+				@endif
 				<li><a href="#contact">За контакт</a></li>
 
 				<li class="user-profile">					
@@ -99,7 +116,7 @@
 				
 			</ul>
 		</nav>
-
+		
 		<!-- Scoll top -->
 		<div class="scroll-top-wrapper">
 		    <span class="scroll-top-inner">

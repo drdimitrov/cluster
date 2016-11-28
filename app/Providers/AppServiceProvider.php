@@ -17,10 +17,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('index', function($view){
             $view->with('latest', \App\News::orderBy('id', 'DESC')->limit(3)->get());
         });
-
-        view()->composer('layouts.method', function($view){
-            $view->with('transgroups', \App\TransitionGroups::all());
-        });
+        
     }
 
     /**
