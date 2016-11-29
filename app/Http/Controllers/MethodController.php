@@ -26,7 +26,5 @@ class MethodController extends Controller
     	return view('method.transitions', compact('transitions', 'transgroups', 'part'));
     }
 
-    public function generator(){
-    	return view('method.generator');
-    }
+    
 }

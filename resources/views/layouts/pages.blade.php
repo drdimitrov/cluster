@@ -58,7 +58,6 @@
 					<ul>
 						<li><a href="{{ url('/method') }}">Увод</a></li>
 						<li><a href="{{ url('/method/1/transition/1') }}">Първа част</a></li>
-						<li><a href="{{ url('/method/generator') }}">Генератор</a></li>
 					</ul>
 				</li>
 				<li>
@@ -73,7 +72,6 @@
 				@else
 				<li><a href="{{ url('/method') }}">Увод</a></li>
 				<li><a href="{{ url('/method/1/transition/1') }}">Първа част</a></li>
-				<li><a href="{{ url('/method/generator') }}">Генератор</a></li>
 				@endif
 				<li><a href="#contact">За контакт</a></li>
 

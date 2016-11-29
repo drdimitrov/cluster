@@ -52,7 +52,7 @@
 	border-radius: 0 0 10px 10px;
 }
 
-.method_menu a:hover{
+.active-side, .method_menu a:hover{
 	color: #ccc !important;
 	background: #000;
 }
@@ -60,6 +60,7 @@
 img{
 	max-width: 100%;
 }
+
 </style>
 <div class="wrapper style2">
 	<article id="about">
@@ -82,7 +83,15 @@ img{
 					<section class="box style1 method_menu">
 						<ul>
 							@foreach($transgroups as $tg)							
-							<li><a href="{{ url('/method/'.$part.'/transition/'.$tg->id) }}">{{ $tg->name }}</a></li>
+							<li>
+								<a 
+									@if(Request::segment(4) == $tg->id) 
+									class="active-side" 
+									@endif 
+									href="{{ url('/method/'.$part.'/transition/'.$tg->id) }}">
+									{{ $tg->name }}
+								</a>
+								</li>
 							@endforeach
 						</ul>
 					</section>
