@@ -5,6 +5,7 @@
 		<title>Cluster</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="imagetoolbar" content="no" />
 		<link rel="stylesheet" href="{{ asset('css/all.css')}}" />
 		<link rel="stylesheet" href="{{ asset('fancybox/jquery.fancybox.css')}}" />
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Courgette|Satisfy&subset=latin-ext" rel="stylesheet">
@@ -16,8 +17,13 @@
 
 			<ul>
 				<li><a href="/">Начало</a></li>
-				<li><a href="{{ url('/pictures') }}">Снимки</a></li>
-				<li><a href="{{ url('/videos') }}">Видео</a></li>
+				@if(Request::segment(1) != 'method')
+					<li><a href="{{ url('/pictures') }}">Снимки</a></li>
+					<li><a href="{{ url('/videos') }}">Видео</a></li>
+				@else
+					<li><a href="{{ url('/method') }}">Увод</a></li>
+					<li><a href="{{ url('/method/1/transition/1') }}">Първа част</a></li>
+				@endif
 				<hr/>
 				@if(Auth::guest())
 					<li><a href="/login">Login</a></li>

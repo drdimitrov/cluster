@@ -6,7 +6,7 @@
 		<li><a href="#news">Новини</a></li>
 		<li><a href="#work">За нас</a></li>
 		<li><a href="#teachers">Преподаватели</a></li>
-		<li><a href="#method">Метод</a></li>
+		<li><a href="/method">Метод</a></li>
 		<li><a href="{{ url('/pictures') }}">Снимки</a></li>
 		<li><a href="{{ url('/videos') }}">Видео</a></li>
 		<hr/>

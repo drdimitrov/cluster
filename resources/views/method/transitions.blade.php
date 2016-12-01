@@ -1,4 +1,6 @@
 @extends('layouts.method')
+
+@section('method_content')
 <link rel="stylesheet" type="text/css" href="{{ asset('jqueryui/jquery-ui.min.css') }}">
 <style>
 	#tabs-3{
@@ -39,7 +41,7 @@
 		margin-top: -20px;
 	}
 </style>
-@section('method_content')
+
 <h3>{{ $transitions->name }}</h3>
 
 <div id="tabs">
@@ -96,26 +98,25 @@
 	<h3>Легенда:</h3>
 	<table>
 		<tr>
-			<td class="timg"><img src="{{ asset('metod/legend/1.png') }}"></td>
+			<td class="timg"><img src="{{ asset('metod/legend/1.png') }}">&nbsp;</td>
 			<td class="tdescr">местата, където трябва да притиснем с пръст струната</td>
 		</tr>
 		<tr>
-			<td class="timg"><img src="{{ asset('metod/legend/3.png') }}"></td>
+			<td class="timg"><img src="{{ asset('metod/legend/3.png') }}">&nbsp;</td>
 			<td class="tdescr">цифрата в кръгчето показва кой пръст в лява ръка да използваме</td>
 		</tr>
 		<tr>
-			<td class="timg"><img src="{{ asset('metod/legend/2.png') }}"></td>
+			<td class="timg"><img src="{{ asset('metod/legend/2.png') }}">&nbsp;</td>
 			<td class="tdescr">основен тон/тоника/</td>
 		</tr>
 		<tr>
-			<td class="timg">_</td>
+			<td class="timg">-</td>
 			<td >знак за глисандо, чрез което осъществяваме преход към нова позиция и нова фигура</td>
 		</tr>
 		<tr>
 			<td class="timg">
 				<span style="color: blue">I</span>,
-				<span style="color: red">II</span>,
-				<span style="color: green">III</span>&nbsp;
+				<span style="color: red">II</span>&nbsp;
 			</td>
 			<td >римското число ни показва коя фигура използваме</td>
 		</tr>
