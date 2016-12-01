@@ -17,6 +17,27 @@
 		bottom: 10px;
 	}
 
+	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+	    border: 1px #595959 !important;
+	    background: #595959 !important;
+	    font-weight: normal;
+	    color: rgb(255, 204, 102) !important;
+	}
+
+	.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+	    color: rgb(255, 204, 102) !important;
+	    text-decoration: none;
+	}
+
+	li:not(.ui-state-active) a.ui-tabs-anchor:hover{
+		color: rgb(190, 97, 39) !important;
+	}
+
+	.udierdiag{
+		text-align: center;
+		font-size: .9em;
+		margin-top: -20px;
+	}
 </style>
 @section('method_content')
 <h3>{{ $transitions->name }}</h3>
@@ -44,7 +65,7 @@
 			</div> --}}
 			<img src="{{ asset('storage/transition_'.$trans->transition.'/'.$trans->name.'.png')}}" oncontextmenu="return false;"/>
 			@if($trans->description)
-				<p>{{ $trans->description }}</p>
+				<p class="udierdiag">* {{ $trans->description }}</p>
 		   	@endif
 		@endforeach
 	</div>
@@ -72,7 +93,7 @@
 </div>
 
 <div id="legend">
-	<h4>Легенда:</h4>
+	<h3>Легенда:</h3>
 	<table>
 		<tr>
 			<td class="timg"><img src="{{ asset('metod/legend/1.png') }}"></td>

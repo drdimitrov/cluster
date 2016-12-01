@@ -30,6 +30,10 @@
     background-color: #f1f1f1;
 }
 
+.method_menu{
+	background: #e9e9e9;
+}
+
 .method_menu ul li{
 	width: 100%;
 	margin-bottom: 10px;
@@ -49,12 +53,12 @@
 }
 
 .method_menu li:last-child a{
-	border-radius: 0 0 10px 10px;
+	border-radius: 0 0 10px 10px;	
 }
 
 .active-side, .method_menu a:hover{
-	color: #ccc !important;
-	background: #000;
+	color: rgb(255, 204, 102) !important;
+	background: #444;
 }
 
 img{
