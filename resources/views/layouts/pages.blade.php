@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 
-<html>
+<html lang="bg">
 	<head>
 		<title>Cluster</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="imagetoolbar" content="no" />
+		<meta name="description" content="Уроци по китара - класическа, електрическа, електроакустична. Обучение по специален метод по блус и рок китара.">
 		<link rel="stylesheet" href="{{ asset('css/all.css')}}" />
 		<link rel="stylesheet" href="{{ asset('fancybox/jquery.fancybox.css')}}" />
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Courgette|Satisfy&subset=latin-ext" rel="stylesheet">
