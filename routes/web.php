@@ -2,8 +2,22 @@
 
 App::setLocale('bg');
 
-Auth::routes();
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout');
 
+// Registration Routes...
+//Route::get('register', 'Auth\RegisterController@showRegistrationForm');
+//Route::post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+//Application routes
 Route::get('/', 'MainController@index');
 Route::get('/method', 'MethodController@index');
 Route::get('/method/{part}/transition/{num}', 'MethodController@transitions');
@@ -12,8 +26,10 @@ Route::get('/videos', 'MainController@videos');
 Route::get('/news/{item?}', 'MainController@news');
 Route::post('/contact', 'MainController@contact');
 
+//Account routes
 Route::get('/home', 'HomeController@index');
 
+//Admin routes
 Route::get('/admin', 'Admin\AdminController@index');
 
 Route::get('/admin/images', 'Admin\AdminController@images');
