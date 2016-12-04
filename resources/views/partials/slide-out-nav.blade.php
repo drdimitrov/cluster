@@ -9,17 +9,18 @@
 		<li><a href="/method">Метод</a></li>
 		<li><a href="{{ url('/pictures') }}">Снимки</a></li>
 		<li><a href="{{ url('/videos') }}">Видео</a></li>
-		<hr/>
+		
 		@if(Auth::guest())
-			<li><a href="/login">Login</a></li>
-			<li><a href="{{ url('/password/reset') }}">Reset password</a></li>
+			<li><a href="/register">Регистрация</a></li>
+			<li><a href="/login">Вход</a></li>
+			<li><a href="{{ url('/password/reset') }}">Смяна на парола</a></li>
 		@else
-			<li><a href="{{ url('/home') }}">Home</a></li>
+			<li><a href="{{ url('/home') }}">Моят акаунт</a></li>
 			<li>
 				<a href="{{ url('/logout') }}"
                     onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
-                    Logout
+                    Изход
                 </a>
 
                 <form 

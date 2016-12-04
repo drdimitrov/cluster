@@ -6,6 +6,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="Уроци по китара - класическа, електрическа, електроакустична. Обучение по специален метод по блус и рок китара.">
+		<!-- CSRF Token -->
+    	<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="stylesheet" href="{{ asset('css/all.css')}}" />
 		<link rel="stylesheet" href="{{ asset('fancybox/jquery.fancybox.css')}}" />	
 	</head>
@@ -20,7 +22,6 @@
 				<li><a href="/news">Новини</a></li>
 				<li><a href="#about">За нас</a></li>
 				<li><a href="#teachers">Преподаватели</a></li>
-				<!-- <li><a href="#method">Метод</a></li> -->
 				<li>
 					<a href="#portfolio">
 						Галерия
@@ -46,15 +47,16 @@
 						@endif
 
 						@if(Auth::guest())
-							<li><a href="{{ url('/login') }}">Login</a></li>
-							<li><a href="{{ url('/password/reset') }}">Reset password</a></li>
+							<li><a href="{{ url('/register') }}">Регистрация</a></li>
+							<li><a href="{{ url('/login') }}">Вход</a></li>
+							<li><a href="{{ url('/password/reset') }}">Смяна на парола</a></li>
 						@else
-							<li><a href="{{ url('/home') }}">Home</a></li>
+							<li><a href="{{ url('/home') }}">Моят акаунт</a></li>
 							<li>
 								<a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                    Logout
+                                    Изход
                                 </a>
 
                                 <form 

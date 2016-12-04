@@ -1196,7 +1196,7 @@ h1.logoh{
 		border-top-color: rgba(0, 0, 0, 0.35);
 		box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
 		height: 1px;
-		margin: 3em 0 4em 0;
+	    margin: 1em 0 1em 0;
 	}
 
 	p, ul, ol, dl, table {

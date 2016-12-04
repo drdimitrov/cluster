@@ -6,6 +6,9 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+use App\Mail\SendActivationToken;
 
 class RegisterController extends Controller
 {
@@ -54,6 +57,7 @@ class RegisterController extends Controller
         ]);
     }
 
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -61,11 +65,40 @@ class RegisterController extends Controller
      * @return User
      */
     protected function create(array $data)
-    {
+    {           
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+  
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        if($request->has('username')){
+            return redirect('/');
+        }
+
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        // $this->guard()->login($user);
+        // return redirect($this->redirectPath());
+
+        $token = $user->activationToken()->create([
+            'token' => str_random(128),
+        ]);
+
+        \Mail::to($user)->send(new SendActivationToken($token));
+
+        return redirect('/login')->withRegistered('Изпратили сме линк за активация на посочения от Вас имейл. Ако не сте го получили проверете и в спам папката.');
     }
 }

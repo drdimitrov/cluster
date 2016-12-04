@@ -8,8 +8,12 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout');
 
 // Registration Routes...
-//Route::get('register', 'Auth\RegisterController@showRegistrationForm');
-//Route::post('register', 'Auth\RegisterController@register');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('register', 'Auth\RegisterController@register');
+
+// Account activation routes
+Route::get('activate/token/{token}', 'Auth\ActivationController@activate')->name('auth.activate');
+Route::get('activate/resend', 'Auth\ActivationController@resend')->name('auth.activate.resend');
 
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');

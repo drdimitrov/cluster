@@ -36,7 +36,11 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Cluster
+                    Към главната страница
+                </a>
+
+                <a class="navbar-brand" href="{{ url('/method') }}">
+                    Метод
                 </a>
             </div>
 
@@ -82,7 +86,23 @@
             </div>
         </div>
     </nav>
+    <!-- Notification for email activation -->    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            @if(session()->has('error'))
+                <div class="alert alert-danger">{!! session()->get('error') !!}</div>
+            @endif
 
+            @if(session()->has('registered'))
+                <div class="alert alert-info">{{ session()->get('registered') }}</div>
+            @endif
+
+            @if(session()->has('info'))
+                <div class="alert alert-danger">{!! session()->get('info') !!}</div>
+            @endif
+        </div>
+    </div>
+    
     @yield('content')
 
     @yield('scripts')

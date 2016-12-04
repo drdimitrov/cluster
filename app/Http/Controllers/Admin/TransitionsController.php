@@ -11,6 +11,12 @@ use App\MethodVideo;
 
 class TransitionsController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('admin');
+    }
+    
     public function trGroups(){
     	return view('admin.transition-groups');
     }
