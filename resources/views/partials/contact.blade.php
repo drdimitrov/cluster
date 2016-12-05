@@ -60,7 +60,7 @@
 		</div>
 		<footer>
 			<ul id="copyright">
-				<li>&copy; Cluster-guitar {{ date('Y') }}. All (YES, ALL) rights reserved.</li>
+				<li>&copy; Cluster-guitar {{ date('Y') }}. Всички права запазени.</li>
 			</ul>
 
 			<script>

@@ -31,6 +31,7 @@ class SendActivationToken extends Mailable
      */
     public function build()
     {
-        return $this->from('dimitrova@cluster-guitar.info', 'Cluster Guitar')->view('emails.activation');
+        return $this->from('dimitrova@cluster-guitar.info', 'Cluster Guitar')
+            ->subject('активиране на акаунт')->view('emails.activation');
     }
 }

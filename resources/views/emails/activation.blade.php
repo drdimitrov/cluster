@@ -1,3 +1,3 @@
-Please, activate your account using the following link:
+Моля, активирайте акаунта си чрез линка по-долу. Ако имате проблем просто копирайте линка и го поставете в браузъра.
 <br>
 <a href="{{ route('auth.activate', $token) }}">{{ route('auth.activate', $token) }}</a>
