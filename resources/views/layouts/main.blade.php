@@ -90,7 +90,7 @@
 					</div>
 					<div class="8u 12u(mobile)">
 						<header>
-							<h1 class="logoh">Cluster Guitar</h1>
+							<h1 class="logoh">Guitar Cluster</h1>
 						</header>
 						<p>
 							"Музиката дава душа на вселената, криле на ума, полет на въображението..."
