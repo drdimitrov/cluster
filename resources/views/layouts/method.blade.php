@@ -46,6 +46,7 @@
 	width: 100%;
 	text-decoration: none;
 	color: #000;
+	vertical-align: middle;
 }
 
 .method_menu li:first-child a{
@@ -65,11 +66,51 @@ img{
 	max-width: 100%;
 }
 
+.label-holder{
+	display: inline-block;
+	position: relative;
+	bottom: 3px;
+}
+
+.label {
+	border-radius: 0;
+	text-shadow: none;
+	font-size: 11px; 
+	font-weight: normal;
+	padding: 3px 5px 3px;			
+}
+
+.label-success{
+	background-color: #82af6f!important
+}
+
+.label.arrowed{ 
+	position: relative;
+	margin-left: 9px 
+}
+
+.label.arrowed:before{ 
+	display: inline-block; content: ""; 
+	position: absolute; 
+	left: -14px; 
+	top: 0; 
+	border: 9px solid transparent; 
+	border-width: 9px 7px; 
+	border-right-color: #abbac3 
+}
+
+.label[class*="span"][class*="arrow"] { 
+	min-height: 0 
+}
+
+.label-success.arrowed:before { 
+	border-right-color: #82af6f 
+}
 </style>
 <div class="wrapper style2">
 	<article id="about">
 		<header>
-			<h2>Метод:</h2>								  
+			<h2>Минорна пентатоника</h2>								  
 		</header>
 		<div class="container">
 			<div class="row">
@@ -94,8 +135,14 @@ img{
 									@endif 
 									href="{{ url('/method/'.$part.'/transition/'.$tg->id) }}">
 									{{ $tg->name }}
+									
+									@if($tg->created_at > \Carbon\Carbon::now()->addDay(-7))
+									<div class="label-holder">
+										<span class="label label-success arrowed"> Ново</span>
+									</div>
+									@endif
 								</a>
-								</li>
+							</li>
 							@endforeach
 						</ul>
 					</section>
