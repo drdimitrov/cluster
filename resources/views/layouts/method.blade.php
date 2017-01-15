@@ -47,6 +47,7 @@
 	text-decoration: none;
 	color: #000;
 	vertical-align: middle;
+	font-size: .9em;
 }
 
 .method_menu li:first-child a{
@@ -127,13 +128,14 @@ img{
 				<div class="3u 12u(mobile)">
 					<section class="box style1 method_menu">
 						<ul>
+							@php($trcnt = 1)
 							@foreach($transgroups as $tg)							
 							<li>
 								<a 
-									@if(Request::segment(4) == $tg->id) 
+									@if(Request::segment(4) == $trcnt) 
 									class="active-side" 
 									@endif 
-									href="{{ url('/method/'.$part.'/transition/'.$tg->id) }}">
+									href="{{ url('/method/'.$part.'/transition/'.$trcnt) }}">
 									{{ $tg->name }}
 									
 									@if($tg->created_at > \Carbon\Carbon::now()->addDay(-7))
@@ -143,6 +145,8 @@ img{
 									@endif
 								</a>
 							</li>
+							
+							@php($trcnt++)
 							@endforeach
 						</ul>
 					</section>

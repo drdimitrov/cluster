@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="imagetoolbar" content="no" />
-		<meta name="description" content="Уроци по китара - класическа, електрическа, електроакустична. Обучение по специален метод по блус и рок китара.">
+		<meta name="description" content="Уроци по китара - класическа, електрическа, електроакустична. Обучение по специален метод.">
 		<link rel="stylesheet" href="{{ asset('css/all.css')}}" />
 		<link rel="stylesheet" href="{{ asset('fancybox/jquery.fancybox.css')}}" />
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Courgette|Satisfy&subset=latin-ext" rel="stylesheet">
@@ -79,7 +79,31 @@
 				</li>
 				@else
 				<li><a href="{{ url('/method') }}">Увод</a></li>
-				<li><a href="{{ url('/method/1/transition/1') }}">Първа част</a></li>
+				<li>
+					<a href="#">Пентатоники</a>
+					<ul>
+						<li><a href="{{ url('/method/1/transition') }}">Минорни</a></li>
+						<!-- <li><a href="{{ url('/method/2/transition') }}">Мажорни</a></li> -->
+					</ul>
+				</li>
+				<li>
+					<a href="#">Акорди</a>
+					<ul>
+						<li><a href="{{ url('/method/3/transition') }}">Минорни</a></li>
+						<!-- <li><a href="{{ url('/method/4/transition') }}">Мажорни</a></li>
+						<li><a href="{{ url('/method/5/transition') }}">Други</a></li> -->
+					</ul>
+				</li>
+				<!-- <li>
+					<a href="#">Ладове и гами</a>
+					<ul>
+						<li><a href="{{ url('/method/6/transition') }}">Старинни ладове</a></li>
+						<li><a href="{{ url('/method/7/transition') }}">Минорни гами</a></li>
+						<li><a href="{{ url('/method/8/transition') }}">Мажорни гами</a></li>
+						<li><a href="{{ url('/method/9/transition') }}">Минорни блус гами</a></li>
+						<li><a href="{{ url('/method/10/transition') }}">Мажорни блус гами</a></li>
+					</ul>
+				</li> -->
 				@endif
 				<li><a href="#contact">За контакт</a></li>
 
@@ -200,19 +224,14 @@
 		
 		<!-- Start of StatCounter Code for Default Guide -->
 		<script type="text/javascript">
-		var sc_project=10977158; 
-		var sc_invisible=1; 
-		var sc_security="76f818f7"; 
-		var scJsHost = (("https:" == document.location.protocol) ?
-		"https://secure." : "http://www.");
+		var sc_project=10977158; var sc_invisible=1; var sc_security="76f818f7"; 
+		var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
 		document.write("<sc"+"ript type='text/javascript' src='" +
-		scJsHost+
-		"statcounter.com/counter/counter.js'></"+"script>");
+		scJsHost + "statcounter.com/counter/counter.js'></"+"script>");
 		</script>
 		<noscript><div class="statcounter"><a title="shopify site
 		analytics" href="http://statcounter.com/shopify/"
-		target="_blank"><img class="statcounter"
-		src="//c.statcounter.com/10977158/0/76f818f7/0/"
+		target="_blank"><img class="statcounter" src="//c.statcounter.com/10977158/0/76f818f7/0/"
 		alt="shopify site analytics"></a></div></noscript>
 		<!-- End of StatCounter Code for Default Guide -->
 	</body>

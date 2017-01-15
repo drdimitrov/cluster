@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TransitionGroups extends Model
 {
-    protected $fillable = ['name', 'part'];
+    protected $fillable = ['name', 'part', 'folder'];
 
     public function transitions(){
     	return $this->hasMany(Transition::class, 'transition');
@@ -18,5 +18,9 @@ class TransitionGroups extends Model
 
     public function videos(){
     	return $this->hasMany(MethodVideo::class, 'transition');
+    }
+
+    public function part(){
+        return $this->belongsTo(Part::class, 'part');
     }
 }

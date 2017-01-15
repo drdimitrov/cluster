@@ -73,7 +73,7 @@ class AdminController extends Controller
 
     public function deleteimage(Image $item){
         $message = 'image';
-        $action = 'AdminController@destroyImg';
+        $action = 'Admin\AdminController@destroyImg';
         return view('admin.warning', compact('item', 'message', 'action'));
     }
 
@@ -133,7 +133,7 @@ class AdminController extends Controller
 
     public function delVideo(Video $item){
         $message = 'video';
-        $action = 'AdminController@destroyVideo';
+        $action = 'Admin\AdminController@destroyVideo';
         return view('admin.warning', compact('item', 'message', 'action'));
     }
 
@@ -202,7 +202,7 @@ class AdminController extends Controller
 
     public function delNews(News $item){
         $message = 'news item';
-        $action = 'AdminController@destroyNews';
+        $action = 'Admin\AdminController@destroyNews';
         return view('admin.warning', compact('item', 'message', 'action'));
     }
 

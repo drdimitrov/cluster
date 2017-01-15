@@ -24,7 +24,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 //Application routes
 Route::get('/', 'MainController@index');
 Route::get('/method', 'MethodController@index');
-Route::get('/method/{part}/transition/{num}', 'MethodController@transitions');
+Route::get('/method/{part}/transition/{num?}', 'MethodController@transitions');
 Route::get('/pictures', 'MainController@images');
 Route::get('/videos', 'MainController@videos');
 Route::get('/news/{item?}', 'MainController@news');

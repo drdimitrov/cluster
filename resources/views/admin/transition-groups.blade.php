@@ -1,6 +1,7 @@
 @extends('admin.index')
 
 @section('admin_content')
+
 @if(Session::has('msg_success'))
     <div class="alert alert-success">{{ Session::get('msg_success') }}</div>
 @endif
@@ -16,12 +17,21 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <p>Add new Transition:</p>
+                            <p>Add new Transition Group:</p>
                             <form  method="post" action="/admin/transition-groups" style="margin-bottom: 10px;">
                             	
                                 <div class="form-group">
                                     <label for="name">Name:</label>
                                     <input class="form-control" type="text" name="name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="transition">Parts:</label>
+                                    <select class="form-control" id="part" name="part">
+                                        @foreach($parts as $part)
+                                        <option value="{{ $part->id }}">{{ $part->name }}</option>
+                                        @endforeach                                     
+                                    </select>
                                 </div>
 
                                 <button type="submit" class="btn btn-default">Upload</button>

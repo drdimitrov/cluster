@@ -65,7 +65,7 @@
 			   @endif
 			   <div style="width: 100%; height: 100%; position: absolute; top: 0; left: 0"></div>
 			</div> --}}
-			<img src="{{ asset('storage/transition_'.$trans->transition.'/'.$trans->name.'.png')}}" oncontextmenu="return false;"/>
+			<img src="{{ asset('storage/'.$transitions->folder.'/'.$trans->name.'.png')}}" oncontextmenu="return false;"/>
 			@if($trans->description)
 				<p class="udierdiag">* {{ $trans->description }}</p>
 		   	@endif

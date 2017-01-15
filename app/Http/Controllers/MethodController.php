@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\TransitionGroups;
 
 class MethodController extends Controller
@@ -13,20 +11,34 @@ class MethodController extends Controller
     	return view('method');
     }
 
-    public function transitions($part, $num){
+    public function transitions(Request $r){
 
-        $transgroups = TransitionGroups::where('part', $part)->get();
-        $targetUrl = request()->url();
+        $part = $r->part;
+
+        $transgroups = TransitionGroups::with('transitions', 'notes', 'videos')
+            ->where('part', $part)->get();
 
         if(!count($transgroups)){
             return redirect('/');
         }
-        
-        if($num >= 7 && !auth()->check()){
-            return redirect('/login')->withInfo('Съдържанието е достъпно само за регистрирани потребители. Влезте в акаунта си или се регистрирайте ако нямате такъв. &nbsp; <a href="/register">Регистрация</a>')->withTarget($targetUrl);         
+
+        if(!$r->num){
+            $transitions = $transgroups->first();
+        }else{
+            if(!isset($transgroups[$r->num - 1])){
+                return redirect('/');
+            }
+
+            $transitions = $transgroups[$r->num - 1];
         }
 
-        $transitions = TransitionGroups::with('transitions', 'notes', 'videos')->find($num);
+        if(!count($transitions->transitions)){
+            return redirect('/');
+        }
+        
+        if($r->num >= 5 && !auth()->check()){
+            return redirect('/login')->withInfo('Съдържанието е достъпно само за регистрирани потребители. Влезте в акаунта си или се регистрирайте ако нямате такъв. &nbsp; <a href="/register">Регистрация</a>')->withTarget(request()->url());         
+        }
 
     	return view('method.transitions', compact('transitions', 'transgroups', 'part'));
     }
