@@ -1,5 +1,19 @@
 @extends('layouts.method')
 
+@section('tr_header')
+	<h2>{{ $transitions->name }}</h2>
+@stop
+
+@section('bxslider')
+	<ul class="bxslider">
+		@foreach($transitions->transitions as $ts)
+			<li>
+				<img src="{{ asset('storage/'.$transitions->folder.'/'.$ts->name.'.png')}}"/>
+			</li>
+		@endforeach
+	</ul>
+@stop
+
 @section('method_content')
 <link rel="stylesheet" type="text/css" href="{{ asset('jqueryui/jquery-ui.min.css') }}">
 <style>
@@ -57,14 +71,7 @@
 		@endif
 	</ul>
 	<div id="tabs-1">
-		@foreach($transitions->transitions as $trans)		
-			{{-- <div id="image-container" style="postion: relative;">
-			   <img src="{{ asset('storage/transition_1/'.$trans->name.'.png')}}" alt="" />
-			   @if($trans->description)
-				<p>{{ $trans->description }}</p>
-			   @endif
-			   <div style="width: 100%; height: 100%; position: absolute; top: 0; left: 0"></div>
-			</div> --}}
+		@foreach($transitions->transitions as $trans)
 			<img src="{{ asset('storage/'.$transitions->folder.'/'.$trans->name.'.png')}}" oncontextmenu="return false;"/>
 			@if($trans->description)
 				<p class="udierdiag">* {{ $trans->description }}</p>

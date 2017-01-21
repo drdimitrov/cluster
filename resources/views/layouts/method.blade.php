@@ -2,10 +2,8 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('slider/jquery.bxslider.css')}}" />
-<style type="text/css">
-
-
-	.bx-wrapper .bx-viewport {
+<style>
+.bx-wrapper .bx-viewport {
     
     border: 5px solid rgb(217, 217, 217);
     left: -5px;
@@ -111,19 +109,12 @@ img{
 <div class="wrapper style2">
 	<article id="about">
 		<header>
-			<h2>Минорна пентатоника</h2>								  
+			@yield('tr_header')								  
 		</header>
 		<div class="container">
 			<div class="row">
 				<div class="12u 12u(mobile)">
-					<ul class="bxslider">
-						<li><img src="{{ asset('metod/slider/p1.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p2.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p3.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p4.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p5.png')}}" /></li>
-						<li><img src="{{ asset('metod/slider/p6.png')}}" /></li>
-					</ul>	
+					@yield('bxslider')						
 				</div>
 				<div class="3u 12u(mobile)">
 					<section class="box style1 method_menu">
@@ -140,7 +131,9 @@ img{
 									
 									@if($tg->created_at > \Carbon\Carbon::now()->addDay(-7))
 									<div class="label-holder">
-										<span class="label label-success arrowed"> Ново</span>
+										<span class="label label-success arrowed"> 
+											Ново
+										</span>
 									</div>
 									@endif
 								</a>

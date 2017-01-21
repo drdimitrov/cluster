@@ -44,7 +44,9 @@
 							Ако имате въпроси, мнения или предложения ще се радвам да ги споделите чрез формата за контакт!
 						</p>
 
-						<a href="/method/1/transition/1">Към първа част <i class="fa fa-chevron-right" aria-hidden="true"></i></a>						
+						<a href="/method/1/transition">Пентатоники <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+						&nbsp; &nbsp; &nbsp;
+						<a href="/method/3/transition">Акорди <i class="fa fa-chevron-right" aria-hidden="true"></i></a>					
 					</section>
 				</div>
 			</div>
