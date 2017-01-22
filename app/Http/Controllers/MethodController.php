@@ -15,7 +15,7 @@ class MethodController extends Controller
 
         $part = $r->part;
 
-        $transgroups = TransitionGroups::with('transitions', 'notes', 'videos', 'toPart')
+        $transgroups = TransitionGroups::with('transitions', 'notes', 'videos', 'toPart.type')
             ->where('part', $part)->get();
 
         if(!count($transgroups)){

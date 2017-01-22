@@ -197,7 +197,7 @@
 					pager: false,
 					auto:true,
 					autoDelay:0,
-					pause: 1000
+					pause: 1400
 			    });
 
 			    $('#tabs').tabs();

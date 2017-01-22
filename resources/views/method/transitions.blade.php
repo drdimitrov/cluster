@@ -104,6 +104,10 @@
 
 <div id="legend">
 	<h3>Легенда:</h3>
-	@include('legends.transitions')
+	@if($transitions->toPart->type->id == 1)
+		@include('legends.transitions')
+	@else
+		@include('legends.accords')
+	@endif
 </div>
 @stop
