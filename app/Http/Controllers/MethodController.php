@@ -15,7 +15,7 @@ class MethodController extends Controller
 
         $part = $r->part;
 
-        $transgroups = TransitionGroups::with('transitions', 'notes', 'videos')
+        $transgroups = TransitionGroups::with('transitions', 'notes', 'videos', 'toPart')
             ->where('part', $part)->get();
 
         if(!count($transgroups)){
@@ -31,7 +31,7 @@ class MethodController extends Controller
 
             $transitions = $transgroups[$r->num - 1];
         }
-
+        
         if(!count($transitions->transitions)){
             return redirect('/');
         }

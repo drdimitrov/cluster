@@ -59,15 +59,7 @@
 
 				@if(Request::segment(1) != 'method')
 				<li><a href="/news">Новини</a></li>
-				<li>
-					<a href="#">
-						Метод
-					</a>
-					<ul>
-						<li><a href="{{ url('/method') }}">Увод</a></li>
-						<li><a href="{{ url('/method/1/transition/1') }}">Първа част</a></li>
-					</ul>
-				</li>
+				<li><a href="{{ url('/method') }}">Метод</a></li>
 				<li>
 					<a href="#">
 						Галерия
@@ -90,8 +82,8 @@
 					<a href="#">Акорди</a>
 					<ul>
 						<li><a href="{{ url('/method/3/transition') }}">Минорни</a></li>
-						<!-- <li><a href="{{ url('/method/4/transition') }}">Мажорни</a></li>
-						<li><a href="{{ url('/method/5/transition') }}">Други</a></li> -->
+						<li><a href="{{ url('/method/4/transition') }}">Мажорни</a></li>
+						<!-- <li><a href="{{ url('/method/5/transition') }}">Други</a></li> -->
 					</ul>
 				</li>
 				<!-- <li>

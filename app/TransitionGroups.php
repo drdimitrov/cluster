@@ -20,7 +20,7 @@ class TransitionGroups extends Model
     	return $this->hasMany(MethodVideo::class, 'transition');
     }
 
-    public function part(){
+    public function toPart(){
         return $this->belongsTo(Part::class, 'part');
     }
 }
