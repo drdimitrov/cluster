@@ -83,7 +83,7 @@
 					<ul>
 						<li><a href="{{ url('/method/3/transition') }}">Минорни</a></li>
 						<li><a href="{{ url('/method/4/transition') }}">Мажорни</a></li>
-						<!-- <li><a href="{{ url('/method/5/transition') }}">Други</a></li> -->
+						<li><a href="{{ url('/method/5/transition') }}">Други</a></li>
 					</ul>
 				</li>
 				<!-- <li>
