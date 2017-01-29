@@ -21,9 +21,14 @@
 				@if(Request::segment(1) != 'method')
 					<li><a href="{{ url('/pictures') }}">Снимки</a></li>
 					<li><a href="{{ url('/videos') }}">Видео</a></li>
+					<li><a href="{{ url('/method') }}">Метод</a></li>
 				@else
 					<li><a href="{{ url('/method') }}">Увод</a></li>
-					<li><a href="{{ url('/method/1/transition/1') }}">Първа част</a></li>
+					<li>
+						<a href="#">Пентатоники</a>
+					</li>
+					<li><a href="#">Акорди</a></li>
+					<li><a href="#">Гами</a></li>
 				@endif
 				<hr/>
 				@if(Auth::guest())
