@@ -94,8 +94,8 @@
 	@if(count($transitions->videos))
 	<div id="tabs-3">
 		@foreach($transitions->videos as $v)
-		<a href="http://www.youtube.com/embed/{{ $v->name }}/?autoplay=1&wmode=opaque" class="fancyvideo fancybox fancybox.iframe" title="{{ $v->description }}">							
-			<img src="http://img.youtube.com/vi/{{ $v->name }}/0.jpg">
+		<a href="https://www.youtube.com/embed/{{ $v->name }}/?autoplay=1&wmode=opaque" class="fancyvideo fancybox fancybox.iframe" title="{{ $v->description }}">							
+			<img src="https://img.youtube.com/vi/{{ $v->name }}/0.jpg">
 		</a>
 		@endforeach
 	</div>

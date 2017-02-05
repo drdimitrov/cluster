@@ -2427,7 +2427,7 @@ ul.pagination li a:hover{
 	top: 0;
 	height: 500px;
 	width: 100%;
-	max-width: 250px;
+	max-width: 200px;
 	box-sizing: border-box;
 	padding: 20px;
 	color: #fff;
@@ -2448,6 +2448,10 @@ ul.pagination li a:hover{
 	line-height: 40px;	
 }
 
+.nav-side ul li{
+	height: 30px;
+}
+
 .nav-side ul li a{
 	color: rgb(255, 204, 102);
 	text-decoration: none;
@@ -2460,7 +2464,7 @@ ul.pagination li a:hover{
 
 .nav-toggle{
 	position: absolute;
-	right: -35px;
+	right: -85px;
 	top: 0;
 	width: 35px;
 	height: 35px;
@@ -2471,8 +2475,29 @@ ul.pagination li a:hover{
 	box-shadow: 1px 0 3px rgba(0, 0, 0, .1);
 }
 
+.nav-side.nav-open .nav-toggle{
+	right: -35px;
+}
+
 .nav-toggle i{
 	color: rgba(255, 204, 102, 0.75);
+}
+
+.second-ul{
+	position: relative;
+	left: 430px;
+	top: -92px;
+	height: 470px;
+	width: 100%;
+	max-width: 250px;
+	box-sizing: border-box;
+	padding: 20px;
+	color: #fff;
+	background-color: rgb(139, 132, 41);
+	z-index: 1;
+	margin-left: -250px;
+	transition: margin 200ms ease-in-out;
+	display: none;
 }
 
 @media screen and (max-width: 1024px) {

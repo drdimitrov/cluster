@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="imagetoolbar" content="no" />
 		<meta name="description" content="Уроци по китара - класическа, електрическа, електроакустична. Обучение по специален метод.">
+		@include('layouts.ga')
 		<link rel="stylesheet" href="{{ asset('css/all.css')}}" />
 		<link rel="stylesheet" href="{{ asset('fancybox/jquery.fancybox.css')}}" />
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Courgette|Satisfy&subset=latin-ext" rel="stylesheet">
@@ -25,7 +26,10 @@
 				@else
 					<li><a href="{{ url('/method') }}">Увод</a></li>
 					<li>
-						<a href="#">Пентатоники</a>
+						<a class="withSubmenu" href="#">Пентатоники</a>
+						<ul class="second-ul">
+							<li><a href="{{ url('/method/1/transition') }}">Минорни</a></li>
+						</ul>
 					</li>
 					<li><a href="#">Акорди</a></li>
 					<li><a href="#">Гами</a></li>

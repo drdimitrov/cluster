@@ -678,15 +678,24 @@ var skel=function(){"use strict";var t={breakpointIds:null,events:{},isInit:!1,o
 			$('#nav > ul').dropotron();
 
 		// Slide-out menu
-		    $('.nav-side .nav-toggle').on('click', function(e){
-		    	e.preventDefault();
-		    	$(this).parent().toggleClass('nav-open');
+		$('.nav-side .withSubmenu').click(function(ev){
+	    	//e.preventDefault();
+	    	ev.stopPropagation();
+	    	$('.second-ul').show();
 
-		    });
+	    });
 
-		    $('div.nav-side ul a').on('click', function(){
-		    	$('.nav-side .nav-toggle').parent().toggleClass('nav-open');
-		    });
+	    $('.nav-side .nav-toggle').on('click', function(e){
+	    	e.preventDefault();
+	    	$(this).parent().toggleClass('nav-open');
+
+	    });
+
+	    $('div.nav-side ul a').on('click', function(){
+	    	$('.nav-side .nav-toggle').parent().toggleClass('nav-open');
+	    });
+
+		    
 			
 	});
 

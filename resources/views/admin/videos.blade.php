@@ -44,7 +44,7 @@
                                 @foreach($videos as $video)
                                 <tr>
                                     <td>
-                                    <img src="http://img.youtube.com/vi/{{ $video->source }}/0.jpg"  width="80">
+                                    <img src="https://img.youtube.com/vi/{{ $video->source }}/0.jpg"  width="80">
                                     </td>
                                     <td>{{ $video->description }}</td>
                                     <td>

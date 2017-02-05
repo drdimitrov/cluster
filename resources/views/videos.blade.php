@@ -17,7 +17,7 @@
 					<div class="4u 12u(mobile)">
 						<article class="box style2 img_box">
 						<a href="http://www.youtube.com/embed/{{ $v->source }}/?autoplay=1&wmode=opaque" class="fancyvideo fancybox fancybox.iframe" title="{{ $v->description }}">							
-							<img src="http://img.youtube.com/vi/{{ $v->source }}/0.jpg"  width="300">
+							<img src="https://img.youtube.com/vi/{{ $v->source }}/0.jpg"  width="300">
 						</a>
 							<p>{{ str_limit($v->description, 30, '...') }}</p>
 						</article>

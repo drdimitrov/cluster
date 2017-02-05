@@ -50,7 +50,7 @@
 					<section class="box style1">
 						<div class="row">
 							<div class="3u 12u(mobile)">
-								<img src="http://cluster-guitar.info/images/gallery.jpg" class="teaherImage" height="400">
+								<img src="{{ asset('images/gallery.jpg')}}" class="teaherImage" height="400">
 							</div>
 							<div class="9u 12u(mobile)">
 								<h3>{!! trans('content.teacher-name') !!}</h3>
