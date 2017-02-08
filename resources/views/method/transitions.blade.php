@@ -75,7 +75,7 @@
 		@foreach($transitions->transitions as $trans)
 			<img src="{{ asset('storage/'.$transitions->folder.'/'.$trans->name.'.png')}}" oncontextmenu="return false;"/>
 			@if($trans->description)
-				<p class="udierdiag">* {{ $trans->description }}</p>
+				<p class="udierdiag">* {!! $trans->description !!}</p>
 		   	@endif
 		@endforeach
 	</div>
