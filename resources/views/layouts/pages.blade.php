@@ -95,16 +95,16 @@
 						<li><a href="{{ url('/method/5/transition') }}">Други</a></li>
 					</ul>
 				</li>
-				<!-- <li>
+				<li>
 					<a href="#">Ладове и гами</a>
 					<ul>
-						<li><a href="{{ url('/method/6/transition') }}">Старинни ладове</a></li>
+						<!-- <li><a href="{{ url('/method/6/transition') }}">Старинни ладове</a></li> -->
 						<li><a href="{{ url('/method/7/transition') }}">Минорни гами</a></li>
 						<li><a href="{{ url('/method/8/transition') }}">Мажорни гами</a></li>
-						<li><a href="{{ url('/method/9/transition') }}">Минорни блус гами</a></li>
-						<li><a href="{{ url('/method/10/transition') }}">Мажорни блус гами</a></li>
+						<!-- <li><a href="{{ url('/method/9/transition') }}">Минорни блус гами</a></li>
+						<li><a href="{{ url('/method/10/transition') }}">Мажорни блус гами</a></li> -->
 					</ul>
-				</li> -->
+				</li>
 				@endif
 				<li><a href="#contact">За контакт</a></li>
 
