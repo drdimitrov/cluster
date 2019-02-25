@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('uploadcare', function ($app) {
-            return new Uploadcare\Api('7ebff2c76f76a8f62225', '2b407e6e96a7f28dd990');
+            return new Uploadcare\Api('', '');
         });
 
     }
